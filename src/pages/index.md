@@ -18,7 +18,7 @@ heading2: Det här är vi
 description2: >
   We Create består av ett fåtal nyckelpersoner med lång erfarenhet inom
   bland annat Event, Pro- duktion, Grafisk formgivning och Digital
-  Marknadsföring.<br /><br />
+  Marknadsföring.
   Utöver detta har vi tillsammans ett stort nätverk och nära
   samarbetspartners med ett brett spek- trum av unika kunskaper.
   Med erfarenhet och expertis kan vi för varje nytt uppdrag skräddarsy
