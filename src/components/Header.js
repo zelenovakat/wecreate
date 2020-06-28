@@ -1,10 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import MobileMenu from "../components/firstPage/MobileMenu"
+import MobileMenu from "../components/MobileMenu"
 import { mediaSmall, mediaXs } from "../components/Screen"
 import { Link } from "gatsby"
-import logoImg from "../images/logo.png"
-
+import logoImg from "../../static/img/logo.png"
 const Header = () => (
   <MainDiv>
     <StyledLink to="/">

@@ -19,7 +19,7 @@ export const IndexPageTemplate = ({
 }) => (
   <div>
     <DivImg>
-      <img src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image} />
+      <MainImg src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image} />
       <CenterP>{title}</CenterP>
     </DivImg>
     <TextDiv>
@@ -29,8 +29,15 @@ export const IndexPageTemplate = ({
       <p>{description2}</p>
       <h2>{heading3}</h2>
       <p>{description3}</p>
-      <ContactCristen>{contact1}</ContactCristen>
-      <div>{contact2}</div>
+      <h1>contact</h1>
+      <ContactCristen>
+        <h2>{contact1}</h2>
+        <a href="mailto:christian@wecreate.se">christian@wecreate</a>
+      </ContactCristen>
+      <div>
+        <h2>{contact2}</h2>
+        <a href="mailto:dan@wecreate.se">dan@wecreate</a>
+      </div>
     </TextDiv>
   </div>
 )
@@ -104,6 +111,9 @@ export const pageQuery = graphql`
   }
 `
 
+const MainImg = styled.img`
+  width: 100%;
+`
 const TextDiv = styled.div`
   margin: 10px 50px 50px 50px;
   h2 {
@@ -119,6 +129,13 @@ const TextDiv = styled.div`
     font-family: Comic Sans MS;
     margin-top: 70px;
     margin-bottom: 20px;
+  }
+  a {
+    font-size: 20px;
+    color: #201f1f;
+    text-decoration: none;
+    font-family: arial;
+    font-style: oblique;
   }
 `
 const DivImg = styled.div`
