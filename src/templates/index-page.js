@@ -113,6 +113,7 @@ export const pageQuery = graphql`
 
 const MainImg = styled.img`
   width: 100%;
+  max-height: 700px;
 `
 const TextDiv = styled.div`
   margin: 10px 50px 50px 50px;
@@ -141,7 +142,6 @@ const TextDiv = styled.div`
 const DivImg = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
 `
 const CenterP = styled.p`
   position: absolute;
@@ -151,7 +151,7 @@ const CenterP = styled.p`
   font-weight: 600;
   text-transform: lowercase;
   ${mediaSmall} {
-    font-size: 150px;
+    font-size: 200px;
   }
 `
 const ContactCristen = styled.div`
