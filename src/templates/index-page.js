@@ -19,7 +19,7 @@ export const IndexPageTemplate = ({
 }) => (
   <div>
     <DivVideo>
-      <MainVideo type="video/mp4" autoPlay loop>
+      <MainVideo type="video/mp4" autoPlay muted loop>
         <source src={wecreateMp4} type="video/mp4" />
         <track kind="captions" srcLang="en" src={Captions} />
       </MainVideo>
