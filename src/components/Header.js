@@ -3,11 +3,11 @@ import styled from "styled-components"
 import MobileMenu from "../components/MobileMenu"
 import { mediaSmall, mediaXs } from "../components/Screen"
 import { Link } from "gatsby"
-import logoImg from "../../static/img/logo.png"
+import wecreateLogoImg from "../../static/img/wecreateLogo.png"
 const Header = () => (
   <MainDiv>
     <StyledLink to="/">
-      <img src={logoImg} alt="" />
+      <img src={wecreateLogoImg} alt="" />
     </StyledLink>
     <MobileMenuDiv>
       <MobileMenu />
@@ -46,7 +46,7 @@ const StyledLink = styled(Link)`
   img {
     margin: 0;
     padding-left: 5px;
-    width: 70%;
+    width: 20%;
   }
 `
 const MainDiv = styled.div`

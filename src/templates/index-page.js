@@ -1,12 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/Layout"
 import { mediaSmall } from "../components/Screen"
-
+import wecreateMp4 from "../../static/img/wecreate.mp4"
+import Captions from "../../gatsby-config"
 export const IndexPageTemplate = ({
-  image,
   title,
   heading1,
   description1,
@@ -18,10 +18,13 @@ export const IndexPageTemplate = ({
   contact2,
 }) => (
   <div>
-    <DivImg>
-      <MainImg src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image} />
+    <DivVideo>
+      <MainVideo type="video/mp4" autoPlay loop>
+        <source src={wecreateMp4} type="video/mp4" />
+        <track kind="captions" srcLang="en" src={Captions} />
+      </MainVideo>
       <CenterP>{title}</CenterP>
-    </DivImg>
+    </DivVideo>
     <TextDiv>
       <h1>{heading1}</h1>
       <p>{description1}</p>
@@ -43,7 +46,6 @@ export const IndexPageTemplate = ({
 )
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading1: PropTypes.string,
   description1: PropTypes.string,
@@ -61,7 +63,6 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
         title={frontmatter.title}
         heading1={frontmatter.heading1}
         description1={frontmatter.description1}
@@ -90,13 +91,6 @@ export const pageQuery = graphql`
   query HomePage {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         title
         heading1
         description1
@@ -111,9 +105,8 @@ export const pageQuery = graphql`
   }
 `
 
-const MainImg = styled.img`
+const MainVideo = styled.video`
   width: 100%;
-  max-height: 700px;
 `
 const TextDiv = styled.div`
   margin: 10px 50px 50px 50px;
@@ -139,7 +132,7 @@ const TextDiv = styled.div`
     font-style: oblique;
   }
 `
-const DivImg = styled.div`
+const DivVideo = styled.div`
   display: flex;
   justify-content: center;
 `
